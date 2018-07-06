@@ -21,8 +21,11 @@ if (!isset($_SESSION['ddLogKiller'])){
 	
 	//Total log rows
 	$rowsTotal = intval($modx->db->getValue($modx->db->select(
+		//Fields
 		'COUNT(id)',
+		//From
 		$logsTableName,
+		//Where
 		'type != 3'
 	)));
 	
