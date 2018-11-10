@@ -5,7 +5,9 @@
  * 
  * @desc Плагин очищает лог событий, сохраняя минимальное заданное количество. Срабатывает раз в сессию каждого пользователя.
  * 
- * @param $rowsNumberToSave {integer} — Сколько записей лога сохранить. Default: 50.
+ * @param $rowsNumberToSave {integer} — Log items number to save. Default: 50.
+ * 
+ * @internal @properties {"rowsNumberToSave": [{"label": "Log items number to save", "desc": "", "type": "string", "default": "", "value": 50}]}
  * 
  * @event OnWebPageInit
  * 
