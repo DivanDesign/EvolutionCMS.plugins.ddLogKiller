@@ -1,9 +1,9 @@
 //<?php
 /**
  * ddLogKiller
- * @version 1.1 (2018-07-01)
+ * @version 1.1.1 (2018-12-04)
  * 
- * @desc Плагин очищает лог событий, сохраняя минимальное заданное количество. Срабатывает раз в сессию каждого пользователя.
+ * @desc Clears the Event Log, preserve needed minimum number of items. Will be working once per session of each user.
  * 
  * @param $rowsNumberToSave {integer} — Log items number to save. Default: 50.
  * 

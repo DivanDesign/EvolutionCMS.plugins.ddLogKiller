@@ -1,5 +1,8 @@
-# MODXEvo.plugins.ddLogKiller changelog
+# (MODX)EvolutionCMS.plugins.ddLogKiller changelog
  
+## Version 1.1.1 (2018-12-04)
+* \* Minor changes.
+
 ## Version 1.1 (2018-07-02)
 * \* Плагин оставляет все события с типом «Ошибка».
 
