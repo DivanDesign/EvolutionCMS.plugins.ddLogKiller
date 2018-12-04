@@ -1,11 +1,13 @@
 //<?php
 /**
  * ddLogKiller
- * @version 1.1 (2018-07-01)
+ * @version 1.1.1 (2018-12-04)
  * 
- * @desc Плагин очищает лог событий, сохраняя минимальное заданное количество. Срабатывает раз в сессию каждого пользователя.
+ * @desc Clears the Event Log, preserve needed minimum number of items. Will be working once per session of each user.
  * 
- * @param $rowsNumberToSave {integer} — Сколько записей лога сохранить. Default: 50.
+ * @param $rowsNumberToSave {integer} — Log items number to save. Default: 50.
+ * 
+ * @internal @properties {"rowsNumberToSave": [{"label": "Log items number to save", "desc": "", "type": "string", "default": "", "value": 50}]}
  * 
  * @event OnWebPageInit
  * 
@@ -21,8 +23,11 @@ if (!isset($_SESSION['ddLogKiller'])){
 	
 	//Total log rows
 	$rowsTotal = intval($modx->db->getValue($modx->db->select(
+		//Fields
 		'COUNT(id)',
+		//From
 		$logsTableName,
+		//Where
 		'type != 3'
 	)));
 	
