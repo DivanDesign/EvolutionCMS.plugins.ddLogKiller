@@ -14,37 +14,37 @@
  * @copyright 2018 DivanDesign {@link http://www.DivanDesign.biz }
  */
 
-//Run only 1 time per session
+// Run only 1 time per session
 if (!isset($_SESSION['ddLogKiller'])){
-	//Defaults
+	// Defaults
 	$rowsNumberToSave = isset($rowsNumberToSave) ? intval($rowsNumberToSave) : 50;
 	
 	$logsTableName = $modx->getFullTableName('event_log');
 	
-	//Total log rows
+	// Total log rows
 	$rowsTotal = intval($modx->db->getValue($modx->db->select(
-		//Fields
+		// Fields
 		'COUNT(id)',
-		//From
+		// From
 		$logsTableName,
-		//Where
+		// Where
 		'type != 3'
 	)));
 	
 	if ($rowsTotal > $rowsNumberToSave){
 		$modx->db->delete(
-			//FROM
+			// FROM
 			$logsTableName,
-			//WHERE
+			// WHERE
 			'type != 3',
-			//ORDER BY
+			// ORDER BY
 			'createdon DESC',
-			//LIMIT
+			// LIMIT
 			$rowsTotal - $rowsNumberToSave
 		);
 	}
 	
-	//Latch
+	// Latch
 	$_SESSION['ddLogKiller'] = true;
 }
 //?>
